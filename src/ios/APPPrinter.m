@@ -68,8 +68,10 @@
         return;
     }
 
-    NSArray*  arguments  = [command arguments];
-    NSString* content    = [arguments objectAtIndex:0];
+    NSArray*  arguments   = [command arguments];
+    NSString* content     = [arguments objectAtIndex:0];
+    // TODO: add orientation option
+    // NSDictionary* options = [arguments objectAtIndex:1];
 
     UIPrintInteractionController* controller = [self printController];
 
@@ -105,7 +107,8 @@
     UIPrintInfo* printInfo = [UIPrintInfo printInfo];
 
     printInfo.outputType  = UIPrintInfoOutputGeneral;
-    printInfo.orientation = UIPrintInfoOrientationPortrait;
+    printInfo.orientation = UIPrintInfoOrientationLandscape;
+    // printInfo.orientation = UIPrintInfoOrientationPortrait;
 
     controller.printInfo      = printInfo;
     controller.showsPageRange = YES;
